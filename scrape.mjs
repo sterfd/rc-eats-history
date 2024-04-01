@@ -91,8 +91,8 @@ for (let i = 0; i < restaurants.length; i++) {
 }
 
 const currentDate = new Date();
-const formmatedDate = `${currentDate.getDate()}${
+const formmatedDate = `${currentDate.getFullYear()}${
   currentDate.getMonth() + 1
-}${currentDate.getFullYear()}-${currentDate.getHours()}${currentDate.getMinutes()}`;
+}${currentDate.getDate()}-${currentDate.getHours()}${currentDate.getMinutes()}`;
 const fileName = `scraped-${formmatedDate}.json`;
 fs.writeFileSync(`./scraped/${fileName}`, JSON.stringify(allCompiled));
