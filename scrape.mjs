@@ -90,9 +90,17 @@ for (let i = 0; i < restaurants.length; i++) {
   await new Promise((r) => setTimeout(r, 3000));
 }
 
-const currentDate = new Date();
-const formmatedDate = `${currentDate.getFullYear()}${
-  currentDate.getMonth() + 1
-}${currentDate.getDate()}-${currentDate.getHours()}${currentDate.getMinutes()}`;
-const fileName = `scraped-${formmatedDate}.json`;
+function padNumber(num, length) {
+  return num.toString().padStart(length, "0");
+}
+
+const formattedDate = `${currentDate.getFullYear()}${padNumber(
+  currentDate.getMonth() + 1,
+  2
+)}${padNumber(currentDate.getDate(), 2)}-${padNumber(
+  currentDate.getHours(),
+  2
+)}${padNumber(currentDate.getMinutes(), 2)}`;
+
+const fileName = `scraped-${formattedDate}.json`;
 fs.writeFileSync(`./scraped/${fileName}`, JSON.stringify(allCompiled));
