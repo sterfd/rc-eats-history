@@ -94,6 +94,7 @@ function padNumber(num, length) {
   return num.toString().padStart(length, "0");
 }
 
+const currentDate = new Date();
 const formattedDate = `${currentDate.getFullYear()}${padNumber(
   currentDate.getMonth() + 1,
   2
