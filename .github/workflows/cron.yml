@@ -4,8 +4,8 @@
 name: Cron Scrape
 
 on:
-  schedule:
-    - cron: "*/10 * * * *"
+  # schedule:
+  #   - cron: "*/10 * * * *"
   push:
     branches:
       - main
